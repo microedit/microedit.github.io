@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+body {background-color:black; font-size:36pt; color:white;}
+p  {color:red; display:inline;}
+</style>
+<title>高考倒计时</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+现在<p id="now"></p><br>
+距高考<p id="days" ></p>天<p id="hour" ></p>时<p id="minus" ></p>分<p id="seconds" ></p>秒<br>
+按计划行动，搞懂每个知识点，解决每个错题！<br>
+将来的你，一定会感激现在奋斗的自己！<br>
+struggle for a better future
+<script>
+var today=new Date();
+if (today.getMonth()<7) {gk=new Date(today.getFullYear(),5,6,0,0,0,0); } 
+	else {gk=new Date(today.getFullYear()+1,5,6,0,0,0,0); }//高考日期
+myTimer();
+var myVar=setInterval(function(){myTimer()},1000);
+function myTimer(){
+	today=new Date();
+	document.getElementById("now").innerHTML=today.toLocaleDateString() + today.toLocaleTimeString();
+	var timediff=gk-today; // 高考距今的毫秒数
+	var days=Math.round(timediff/1000/60/60/24 - 0.5);
+	var hour=Math.round((timediff-days*1000*60*60*24)/1000/60/60 - 0.5);
+	var minus=Math.round((timediff-days*1000*60*60*24-hour*1000*60*60)/1000/60 - 0.5);
+//	var minus=Math.round((timediff-days*1000*60*60*24)/1000/60 - 0.5);
+	var seconds=Math.round((timediff-days*1000*60*60*24-hour*1000*60*60-minus*1000*60)/1000 );
+//	var seconds=Math.round((timediff-days*1000*60*60*24)/1000 );
+	document.getElementById("days").innerHTML=days;
+	document.getElementById("hour").innerHTML=hour;
+	document.getElementById("minus").innerHTML=minus;
+	document.getElementById("seconds").innerHTML=seconds;
+}
+</script>
+</body>
+</html>
