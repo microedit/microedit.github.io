@@ -1,28 +1,28 @@
-<html>
+ï»¿<html>
 <head>
 <style>
 body {background-color:black; font-size:36pt; color:white;}
 p  {color:red; display:inline;}
 </style>
-<title>¸ß¿¼µ¹¼ÆÊ±</title>
+<title>é«˜è€ƒå€’è®¡æ—¶</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-ÏÖÔÚ<p id="now"></p><br>
-¾à¸ß¿¼<p id="days" ></p>Ìì<p id="hour" ></p>Ê±<p id="minus" ></p>·Ö<p id="seconds" ></p>Ãë<br>
-°´¼Æ»®ĞĞ¶¯£¬¸ã¶®Ã¿¸öÖªÊ¶µã£¬½â¾öÃ¿¸ö´íÌâ£¡<br>
-½«À´µÄÄã£¬Ò»¶¨»á¸Ğ¼¤ÏÖÔÚ·Ü¶·µÄ×Ô¼º£¡<br>
+ç°åœ¨<p id="now"></p><br>
+è·é«˜è€ƒ<p id="days" ></p>å¤©<p id="hour" ></p>æ—¶<p id="minus" ></p>åˆ†<p id="seconds" ></p>ç§’<br>
+æŒ‰è®¡åˆ’è¡ŒåŠ¨ï¼Œææ‡‚æ¯ä¸ªçŸ¥è¯†ç‚¹ï¼Œè§£å†³æ¯ä¸ªé”™é¢˜ï¼<br>
+å°†æ¥çš„ä½ ï¼Œä¸€å®šä¼šæ„Ÿæ¿€ç°åœ¨å¥‹æ–—çš„è‡ªå·±ï¼<br>
 struggle for a better future
 <script>
 var today=new Date();
 if (today.getMonth()<7) {gk=new Date(today.getFullYear(),5,6,0,0,0,0); } 
-	else {gk=new Date(today.getFullYear()+1,5,6,0,0,0,0); }//¸ß¿¼ÈÕÆÚ
+	else {gk=new Date(today.getFullYear()+1,5,6,0,0,0,0); }//é«˜è€ƒæ—¥æœŸ
 myTimer();
 var myVar=setInterval(function(){myTimer()},1000);
 function myTimer(){
 	today=new Date();
 	document.getElementById("now").innerHTML=today.toLocaleDateString() + today.toLocaleTimeString();
-	var timediff=gk-today; // ¸ß¿¼¾à½ñµÄºÁÃëÊı
+	var timediff=gk-today; // é«˜è€ƒè·ä»Šçš„æ¯«ç§’æ•°
 	var days=Math.round(timediff/1000/60/60/24 - 0.5);
 	var hour=Math.round((timediff-days*1000*60*60*24)/1000/60/60 - 0.5);
 	var minus=Math.round((timediff-days*1000*60*60*24-hour*1000*60*60)/1000/60 - 0.5);
