@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>人工智能辅助医疗</title>
+<script src="therapy.js"></script>
+</head>
+<body>
+<!--请详细填写下列条目，可自己补充
+<form action="demo_form.php" method="post">
+<br>第一章 填写一般情况 填写的字体可以用红字。
+<br>1、姓名[<input type="text" name="name">] 若不方便的场合可以用化名（但患者自己必须记住这个化名），有的名字可以反应某些与疾病有关的情况。
+<br>2、年龄[<input type="text" name="age"> ] 患者的周岁，或叙述出生年月日（公历）生辰（生日，必填）。
+<br>3、性别[<input type="text" name="sex"> ] 男性特有病种，如：遗精、滑精、早泄、阳痿、阴茎癌、睾丸炎、阴囊病等。
+<br>女性特有的病种，如：经、宫、卵、妊、产、带等。
+<br>4、婚育及生育[<input type="text" name="sex"> ]有或无
+<br>5、职业[<input type="text" name="job"> ] 以前长期做何种工作？现在做何种工作。
+<br>6、民族[<input type="text" name="nation"> ] 以及宗教信仰、文化爱好、生活喜好等。
+<br>7、籍贯和地址[<input type="text" name="address"> ] 以前或现在长期居住地区的特点。
+<br>8、发病时间[ <input type="text" name="beginTime">] 某年月日发生何种病，或这种病患多久。
+<br>9、身高[<input type="text" name="hign"> ] 体重[<input type="text" name="weight"> ] 腰围[<input type="text" name="waistline"> ]（裤腰）
+<br>10、肤色[<input type="text" name="skincolor"> ]（请描述皮肤是什么颜色）
+<br>11、其他情况[<input type="text" name="other">  ] 除以上一般情况外，方便时对患者的工作单位、电话号码、电子邮件、病情陈述人等应该记录，方便随访联系。
+<br>工作单位[<input type="text" name="workCom"> ]
+<br>电话号码[<input type="text" name="tel"> ]
+<br>电子邮件[<input type="text" name="email"> ]
+-->
+<br>第一章 内科
+<br>症状:
+<form name="input" action="html_form_action.php" method="get">
+<ol>
+<li>问寒热: 有怕冷或怕热的感觉吗?
+<select name="cold">
+<option value="恶热">恶热:内热,有怕热的感觉, 减衣服不能缓解,需要加冰</option>
+<option value="畏热">畏热:外热,有怕热的感觉, 减衣服能缓解</option>
+<option value="正常" selected=selected >正常: 没有怕冷的感觉</option>
+<option value="畏寒">畏寒:外寒,有怕冷的感觉, 加衣服或盖被子能缓解</option>
+<option value="恶寒">恶寒:内寒,有怕冷的感觉, 加衣服或盖被子不能缓解</option>
+</select>
+</li>
+<li>问风: 有怕风的感觉吗?
+<select name="wind">
+<option value="正常">正常: 没有怕风的感觉</option>
+<option value="怕风">怕风: 有怕风的感觉</option>
+</select>
+</li>
+<li>问体温: 发热吗？
+<select name="hot">
+<option value="高烧">高烧:39度以上</option>
+<option value="中烧">中烧:38.0-38.9度</option>
+<option value="低烧">低烧:37.1-37.9度</option>
+<option value="正常" selected=selected>正常:36.0-37.0度</option>
+<option value="发冷">发冷: 34.0-36.0度</option>
+<option value="冷抖">冷得发抖: 32-34.0度</option>
+<option value="冻僵">冻僵: 低于32.0度</option>
+</select>
+</li>
+<li>问头: 
+<select name="head">
+<option value="正常">正常</option>
+<option value="头痛">头痛</option>
+<option value="偏头痛">偏头痛</option>
+</select>
+</li>
+<li>问鼻塞: 
+<select name="nose">
+<option value="正常">正常</option>
+<option value="鼻塞">鼻塞</option>
+</select>
+</li>
+<li>问鼻涕
+<select name="snot">
+<option value="正常">正常</option>
+<option value="流清涕">流清涕</option>
+<option value="流黄涕">流黄涕</option>
+</select>
+</li>
+<li>问口感: 
+<select name="taste">
+<option value="正常">正常</option>
+<option value="口渴">口渴</option>
+<option value="口苦">口苦</option>
+<option value="口甜">口甜</option>
+<option value="口酸">口酸</option>
+<option value="口水多">口水多</option>
+</select>
+</li>
+<li>问舌质: 
+<select name="tongue">
+<option value="舌深红">舌深红:又称绛舌, 阴虚火旺</option>
+<option value="舌红">舌红:主热症</option>
+<option value="舌尖红">舌尖红:表热</option>
+<option value="正常"  selected=selected >正常, 淡红润泽</option>
+<option value="舌紫">舌紫:寒凝血瘀</option>
+<option value="舌青">舌青:寒凝阳郁</option>
+</select>
+</li>
+<li>问舌苔: 
+<select name="furredTongue">
+<option value="舌苔黑干舌红">舌苔黑干,舌质红, 热极津枯</option>
+<option value="舌苔灰黑质红">舌苔灰黑, 舌质红绛:热伤津,阴虚火旺</option>
+<option value="舌苔红">舌苔红:红为阳亢阴虚症</option>
+<option value="舌苔黄干">舌苔黄干:黄为热,干为燥症,越干燥症越重, 燥重时如枯槁</option>
+<option value="舌苔黄腻">舌苔黄腻:黄为热,腻为苔面如沾有一层薄痰,主痰湿症</option>
+<option value="舌苔厚黄">舌苔厚黄:舌中间层厚黄苔,越厚热症病越重</option>
+<option value="舌苔薄黄">舌苔薄黄:黄为热症</option>
+<option value="正常" selected=selected>正常:薄白,红润,鲜活</option>
+<option value="舌苔薄白">舌苔薄白:正常或轻症,舌中间薄白苔,半透明如纱,有分散小红点,舌尖舌边可见淡红舌质</option>
+<option value="舌苔厚白">舌苔厚白:舌铺满厚白苔,包括舌尖四周都盖一层白苔,看不见淡红舌质,越厚寒症病越重</option>
+<option value="舌苔白干裂">舌苔白干裂:寒燥伤阴</option>
+<option value="舌苔灰黑润滑">舌苔灰黑润滑:寒湿内停,痰饮内停</option>
+<option value="舌苔黑干起刺">舌苔黑干起刺:寒盛阳虚,寒极津枯</option>
+</select>
+</li>
+<li>问咽喉: 
+<select name="throat">
+<option value="咽喉干痛">咽喉干痛</option>
+<option value="咽喉红痛">咽喉红痛</option>
+<option value="正常" selected=selected>正常</option>
+<option value="咽喉痒">咽喉痒</option>
+</select>
+</li>
+<li>问咳: 
+<select name="cough">
+<option value="干咳无痰">干咳无痰</option>
+<option value="正常" selected=selected>正常</option>
+<option value="咳嗽有痰">咳嗽有痰</option>
+</select>
+</li>
+<li>问痰:
+<select name="sputum">
+<option value="痰浓黄色">痰浓黄色</option>
+<option value="痰稀黄色">痰稀黄色</option>
+<option value="正常" selected=selected>正常</option>
+<option value="痰稀白色">痰稀白色</option>
+<option value="痰浓白色">痰浓白色</option>
+<option value="痰浓青色">痰浓青色</option>
+</select>
+</li>
+<li>问肺和气管:
+<select name="lung">
+<option value="正常" selected=selected>正常</option>
+<option value="喉咙有痰">喉咙有痰</option>
+<option value="气管有痰音">气管有痰音</option>
+<option value="支气管有痰音">支气管有痰音</option>
+<option value="肺部有痰音">肺部/支气管 有痰音</option>
+</select>
+</li>
+<li>问四肢: 
+<select name="ache">
+<option value="正常" selected=selected>正常</option>
+<option value="全身酸痛">全身酸痛</option>
+<option value="四肢酸痛">四肢酸痛</option>
+</select>
+</li>
+<li>问腹: 
+<select name="belly">
+<option value="正常" selected=selected>正常</option>
+<option value="腹痛,腹泻,恶心,呕吐">腹痛,腹泻,恶心,呕吐</option>
+</select>
+</li>
+<li>问尿: 
+<select name="piss">
+<option value="正常" selected=selected>正常</option>
+<option value="尿黄">尿黄</option>
+<option value="尿清">尿清</option>
+</select>
+</li>
+<li>问脉迟数: 
+<select name="pulseSpeed">
+<option value="疾脉">疾脉,成人每分钟脉搏100次以上, 比正常快20%以上, 主剧烈运动中,或热盛病症,或孕妇临产</option>
+<option value="数脉">数脉,成人每分钟脉搏80-100次, 比正常快10-20%, 主适量运动中,或中热病症,或怀孕</option>
+<option value="正常" selected=selected>正常,平静时每分钟脉搏:0-3岁婴儿110-150次,3-6岁幼儿90-120次，6-10岁儿童80-100次,10-15岁少年75-90次,16-55岁成人70-80次, 55-65岁65-75次, 65岁以上60-70次</option>
+<option value="缓脉">缓脉,成人每分钟脉搏60-70次, 比正常慢7-15%, 主睡眠中, 或阳虚寒症</option>
+<option value="迟脉">迟脉,成人每分钟脉搏60次以下, 比正常慢15%以上, 主寒盛阳虚重症</option>
+</select>
+</li>
+<li>问脉沉浮: 
+<select name="pulseSwim">
+<option value="浮脉">浮脉, 轻触脉动, 按之脉弱, 瘦人脉, 浮脉为阳, 主表症</option>
+<option value="正常" selected=selected>正常</option>
+<option value="沉脉">沉脉, 轻触无脉, 按之有脉, 胖人脉, 沉脉为阴, 主里症</option>
+</select>
+</li>
+<li>问脉弱洪,心跳力度: 
+<select name="pulseSwim">
+<option value="洪脉">洪脉, 脉强有力, 气盛血涌, 主阴虚里热实症</option>
+<option value="正常" selected=selected>正常</option>
+<option value="弱脉">弱脉, 脉弱无力, 气虚血少, 主失血阴阳两虚症</option>
+</select>
+</li>
+</ol>
+<br><input type="button"  onclick="diagnose(this)" value="诊断">
+</form>
+诊断意见和治法
+<div id="therapy" ></div>
+<br>
+<br>
+
+</body>
+</html>
