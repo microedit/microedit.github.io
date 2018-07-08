@@ -6,6 +6,7 @@
 <script src="therapy.js"></script>
 </head>
 <body>
+设计人: 李增兴
 <!--请详细填写下列条目，可自己补充
 <form action="demo_form.php" method="post">
 <br>第一章 填写一般情况 填写的字体可以用红字。
@@ -189,12 +190,30 @@
 <option value="弱脉">弱脉, 脉弱无力, 气虚血少, 主失血阴阳两虚症</option>
 </select>
 </li>
+<li>问饮食: 
+<select name="eat">
+<option value="厌食滞胃">厌食滞胃,食物滞留胃部,腹胀,嗳气酸腐</option>
+<option value="厌食厌油">厌食厌油,肝胆湿热,若眼面肤色变黄则为黄疸肝炎</option>
+<option value="食欲不振">食欲不振,食欲减退</option>
+<option value="偏食">偏食,不吃肉则易饥,不吃青菜则易上火,不喝水则燥症,不吃饭面则力弱</option>
+<option value="正常" selected=selected>正常,每餐2-3两饭,蔬菜水果肉类营养均衡</option>
+<option value="多食善饥">多食善饥,吃的多,又饿的快,形态消瘦,消渴症,胃火过盛,腐熟太过,胃强脾弱,胃消过盛,脾化不足,无法吸收</option>
+<option value="嗜食">嗜食,嗜辣生热,嗜冷生寒,嗜肉生痰,嗜肥生堵(心梗塞脑梗塞偏头痛)</option>
+</select>
+<li>问睡眠: 
+<select name="sleep">
+<option value="失眠">失眠,难入睡,易醒,睡不深,多梦. 阴虚阳盛,阳不入阴,神不守舍</option>
+<option value="正常" selected=selected>正常</option>
+<option value="嗜睡">嗜睡,困,随时入睡,一天睡眠时间超过10小时,越睡越困,阳虚阴盛,阳不出阴</option>
+</select>
+</li>
 </ol>
 <br><input type="button"  onclick="diagnose(this)" value="诊断">
 </form>
 诊断意见和治法
 <div id="therapy" ></div>
-<br>
+<br>中医治疗原则：寒则温之，热则凉之，风则祛之，燥则润之，湿则除之...
+<br>测试版本，诊断意见仅供参考，不承担医疗责任，有病请看医生。
 <br>
 
 </body>
